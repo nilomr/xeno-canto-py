@@ -1,4 +1,4 @@
-# xenocanto<p style="font-size:10px">API Wrapper</p> 
+# xenocanto <sub><sup>API Wrapper</sup></sub>
 <br>
 
 **xenocanto** is an API wrapper designed to download recordings and their metadata from the citizen science project [xeno-canto.org](https://xeno-canto.org/).
