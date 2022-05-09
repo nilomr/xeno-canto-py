@@ -1,5 +1,4 @@
-/venv
-/.vscode
+# Inherited
 /__pycache__
 /queries
 /recordings
@@ -7,6 +6,29 @@
 .DS_Store
 runner.py
 /dist
-*.egg-info
-/build
 /dataset
+
+
+# Python builds, etc
+.cache/
+*.egg-info/
+build/*
+dist/*
+MANIFEST
+*.pyc
+.venv
+
+# IDE
+.idea/
+/.vscode
+
+# docs / jupyter
+doc/_build/
+doc/notebooks/data/*/
+.ipynb_checkpoints/
+./notebooks/*.ipynb
+./notebooks/data/*/
+
+# coverage / pytest-cov
+.coverage
+coverage.xml
