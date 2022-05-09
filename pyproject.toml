@@ -1,0 +1,30 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "xenocanto"
+description = "A python library to download xeno-canto recordings"
+
+requires-python = ">=3.7"
+dependencies = ["tqdm"]
+version = "0.0.1"
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    'License :: OSI Approved :: MIT License',
+    'Development Status :: 4 - Beta',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+]
+
+[project.optional-dependencies]
+test = ["pytest >=6.2.1", "pytest-cov >=2.12.0"]
+dev = ['flit', "nox", "black"]
+
+[project.urls]
+Source = "https://github.com/nilomr/xeno-canto-py"
+
+[tool.flit.sdist]
+exclude = ["tests/data_for_tests"]
