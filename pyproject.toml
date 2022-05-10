@@ -26,5 +26,8 @@ dev = ['flit', "nox", "black"]
 [project.urls]
 Source = "https://github.com/nilomr/xeno-canto-py"
 
+[project.scripts]
+xeno-canto = 'xenocanto.xenocanto:main'
+
 [tool.flit.sdist]
 exclude = ["tests/data_for_tests"]
