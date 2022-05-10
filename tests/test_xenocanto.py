@@ -20,7 +20,7 @@ class TestCases(unittest.TestCase):
     def test_metadata(self):
         metadata(["Bearded Bellbird", "q:A"])
         self.assertTrue(
-            os.path.exists("dataset/metadata/BeardedBellbird&q_A/page1.json")
+            os.path.exists("dataset/metadata/BeardedBellbirdq_A/page1.json")
         )
 
     # Checks if audio files are downloaded into the correct directory
