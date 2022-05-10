@@ -30,8 +30,34 @@ source .venv/bin/activate
 
 ### Usage
 
+Commands through the terminal are given in the following format:
 ```
-# TODO@nilomr add use examples once API is defined
+-m 	[filters]	Metadata generation
+-dl [filters] 	Download recordings
+-d 	[filters]	Delete recordings
+-p 	[num] 		Purge folders containing num or fewer recordings
+-g 	[path] 		Generate metadata for provided library path (defaults to 'dataset/audio/')
+```
+```filters``` are given in tag:value form in accordance with the API search guidelines. For help in building search terms, consult the [xeno-canto API guide](https://www.xeno-canto.org/article/153). The only exception is when providing English bird names as an argument to the ```-d``` command, which must be preceded with ```en:``` and have all spaces be replaced with underscores.
+
+Examples of command-line use are given below:
+```bash
+# Retrieving metadata
+xeno-canto -m Bearded Bellbird q:A
+
+# Downloading recordings
+xeno-canto -dl Bearded Bellbird cnt:Brazil
+
+# Delete recordings with ANY of specified criteria from
+# library
+xeno-canto -d q:D cnt:Brazil
+
+# Purge folders with less than 10 recordings
+xeno-canto -p 10
+
+# Generate metadata for all recordings in the path
+# (defaults to 'dataset/audio/')
+xeno-canto -g
 ```
 
 ### Changelog
