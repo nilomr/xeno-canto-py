@@ -61,6 +61,6 @@ xeno-canto -g
 ```
 
 ### Changelog
-You can see project history and work in progress in the [changelog](./docs/CHANGELOG.md).
+You can see project history and work in progress in the [changelog](./doc/CHANGELOG.md).
 ### License
 The project is licensed under the [MIT license](./LICENSE).
