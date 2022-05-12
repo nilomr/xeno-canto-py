@@ -1,43 +1,46 @@
-# xeno-canto API Wrapper
-xeno-canto-py is an API wrapper designed to help users easily download xeno-canto.org recordings and associated information.
+# xenocanto <sub><sup>API Wrapper</sup></sub>
+<br>
 
-Originally created to aid in data collection and filtering for the training of machine learning models.
-## Installation
-Navigate to your desired file location in a terminal and then clone the repository with the following command:
-```bash
-git clone https://github.com/ntivirikin/xeno-canto-py
-```
-The only file required for operation is the ```xenocanto.py``` file, so feel free to remove the others or move ```xenocanto.py``` to another working directory.
+**xenocanto** is an API wrapper designed to download recordings and their metadata from the citizen science project [xeno-canto.org](https://xeno-canto.org/).
 
-You may also use the package manager [pip](https://pip.pypa.io/en/stable/) to install xeno-canto-py to include in your Python projects.
+### Installation
+#### Using `pip`
 
 ```bash
 pip install xeno-canto
 ```
-Then import the module:
-```python
-import xenocanto
-```
-Or use it straight from the command line:
+#### Development installation
+
+To set up a development environment using `conda`:
 ```bash
-xeno-canto -dl Bearded Bellbird
+conda create -n xenocanto-dev python=3.7
+conda activate xenocanto-dev
+git clone https://github.com/nilomr/xeno-canto-py.git
+cd xeno-canto-py
+pip install -e '.[dev, test]'
 ```
-## Usage
+
+To set up a development environment using `nox` & `virtualenv`:
+```bash
+pip install nox
+git clone https://github.com/nilomr/xeno-canto-py.git
+nox -s dev 
+source .venv/bin/activate
+```
+
+### Usage
+
 Commands through the terminal are given in the following format:
 ```
 -m 	[filters]	Metadata generation
-
--dl 	[filters] 	Download recordings
-
+-dl [filters] 	Download recordings
 -d 	[filters]	Delete recordings
-
 -p 	[num] 		Purge folders containing num or fewer recordings
-
 -g 	[path] 		Generate metadata for provided library path (defaults to 'dataset/audio/')
 ```
 ```filters``` are given in tag:value form in accordance with the API search guidelines. For help in building search terms, consult the [xeno-canto API guide](https://www.xeno-canto.org/article/153). The only exception is when providing English bird names as an argument to the ```-d``` command, which must be preceded with ```en:``` and have all spaces be replaced with underscores.
 
-Examples of command usage are given below:
+Examples of command-line use are given below:
 ```bash
 # Retrieving metadata
 xeno-canto -m Bearded Bellbird q:A
@@ -56,9 +59,8 @@ xeno-canto -p 10
 # (defaults to 'dataset/audio/')
 xeno-canto -g
 ```
-## Contributing
-All pull requests are welcome! If any issues are found, please do not hesitate to bring them to my attention.
-## Acknowledgements
-Thank you to the team at xeno-canto.org and all its contributors for putting together such an amazing database.
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+
+### Changelog
+You can see project history and work in progress in the [changelog](./docs/CHANGELOG.md).
+### License
+The project is licensed under the [MIT license](./LICENSE).
